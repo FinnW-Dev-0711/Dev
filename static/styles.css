@@ -62,6 +62,23 @@ h1 { margin: 14px 0 8px; font-size: clamp(30px, 5vw, 42px); }
 h2 { margin-top: 0; }
 .subtitle, .hint { color: var(--muted); margin: 0; }
 
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.quick-total {
+  font-weight: 700;
+  color: #cfe0ff;
+  background: rgba(91, 140, 255, 0.14);
+  border: 1px solid rgba(91, 140, 255, 0.35);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
 #rows {
   display: grid;
   gap: 10px;
@@ -104,6 +121,11 @@ input:focus {
   cursor: pointer;
 }
 
+.btn:disabled {
+  opacity: 0.75;
+  cursor: wait;
+}
+
 .btn-primary {
   background: linear-gradient(120deg, var(--primary), var(--primary-2));
   color: white;
@@ -124,6 +146,32 @@ input:focus {
 
 .result.hidden { display: none; }
 .result h3 { margin-top: 0; }
+
+.totals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.total-card {
+  border-radius: 12px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.total-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.total-card strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 22px;
+}
+
 .group {
   margin-top: 14px;
   border-top: 1px solid rgba(255,255,255,0.08);
@@ -156,4 +204,5 @@ input:focus {
 
 @media (max-width: 680px) {
   .row { grid-template-columns: 1fr 1fr 34px; }
+  .totals-grid { grid-template-columns: 1fr; }
 }

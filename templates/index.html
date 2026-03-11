@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AboScope – Abo-Analyzer</title>
+  <title>AboScope – Abo-Kostenrechner</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,22 +15,28 @@
 
   <main class="container">
     <section class="hero card">
-      <p class="badge">KI + Websuche</p>
-      <h1>AboScope</h1>
+      <p class="badge">Abo-Kosten auf einen Blick</p>
+      <h1>Dein Subscription Tracker</h1>
       <p class="subtitle">
-        Trage deine Abos ein, wir holen uns automatisch Kontext aus dem Web und gruppieren deine Kosten übersichtlich.
+        Trage deine Abos und Preise ein und sehe sofort, was du pro Monat und Jahr insgesamt zahlst.
       </p>
     </section>
 
     <section class="card input-panel">
-      <h2>Deine Abos</h2>
-      <p class="hint">Beispiel: Netflix – 12.99</p>
+      <div class="panel-header">
+        <div>
+          <h2>Deine Abos</h2>
+          <p class="hint">Beispiel: Netflix – 12,99 €</p>
+        </div>
+        <div class="quick-total" id="quick-total">Live-Gesamt: 0,00 € / Monat</div>
+      </div>
+
       <form id="subscription-form">
         <div id="rows"></div>
 
         <div class="actions">
           <button type="button" id="add-row" class="btn btn-secondary">+ Abo hinzufügen</button>
-          <button type="submit" class="btn btn-primary">Analyse starten</button>
+          <button type="submit" class="btn btn-primary">Gesamtkosten berechnen</button>
         </div>
       </form>
     </section>
